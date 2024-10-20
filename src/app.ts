@@ -120,7 +120,7 @@ app.use(
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_LOCAL!);
+    await mongoose.connect(process.env.Mongo_Url!);
     console.log("connected to db");
     // const user = await User.findOne();
     // if (!user) {
