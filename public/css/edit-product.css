@@ -1,0 +1,98 @@
+main {
+  width: 100%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.user-message--error {
+  background-color: #ff4d4f; /* Error message background */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333; /* Dark color for labels */
+}
+
+.form-control input,
+.form-control textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4); /* Blue shadow on focus */
+  outline: none;
+}
+
+.invalid {
+  border-color: #ff4d4f; /* Red border for invalid fields */
+}
+
+.form-control input[type="file"] {
+  padding: 0;
+  font-size: 1rem;
+  color: #757575; /* Gray color for file input */
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff; /* Blue background for buttons */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.btn:disabled {
+  background-color: #ccc; /* Gray background when disabled */
+  cursor: not-allowed; /* Not-allowed cursor */
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1.5rem; /* Reduced padding on smaller screens */
+  }
+
+  .btn {
+    width: 100%; /* Full width button on mobile */
+    text-align: center; /* Center text on mobile */
+  }
+}

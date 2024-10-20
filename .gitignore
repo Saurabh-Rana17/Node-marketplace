@@ -1,0 +1,4 @@
+node_modules
+mongo.txt
+.env
+test.ts

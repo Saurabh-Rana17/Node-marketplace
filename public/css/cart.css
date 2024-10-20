@@ -1,0 +1,118 @@
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff; /* White background for better contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333; /* Dark Gray */
+  text-transform: capitalize;
+}
+
+.cart__item-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* White background for cart items */
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.cart__item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cart__item h1,
+.cart__item h2 {
+  margin: 0;
+  font-weight: normal;
+  color: #555; /* Medium Gray */
+}
+
+.cart__item h1 {
+  font-size: 1.4rem;
+  color: #007bff; /* Blue for item title */
+}
+
+.cart__item h2 {
+  font-size: 1.1rem;
+  color: #666; /* Light Gray */
+}
+
+form {
+  margin: 0;
+}
+
+.cart-btn {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cart-btn:hover {
+  background-color: #0056b3; /* Darker Blue on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.danger {
+  background-color: #dc3545; /* Bootstrap Red */
+}
+
+.danger:hover {
+  background-color: #b71c1c; /* Darker Red on hover */
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+hr {
+  margin-top: 2rem;
+  border: none;
+  border-top: 1px solid #ddd; /* Light Gray for the line */
+}
+
+@media (max-width: 600px) {
+  .cart__item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .cart__item h1,
+  .cart__item h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cart-btn {
+    width: 100%; /* Full width for buttons on small screens */
+    text-align: center;
+  }
+
+  .centered {
+    flex-direction: column;
+  }
+}

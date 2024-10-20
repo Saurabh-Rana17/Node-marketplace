@@ -1,0 +1,119 @@
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9; /* Soft background for main container */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333; /* Dark color for headings */
+  margin-bottom: 1.5rem;
+}
+
+.orders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orders__item {
+  background-color: #fff; /* White background for each order item */
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.orders__item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.orders__item h1 {
+  display: flex;
+  justify-content: space-between; /* Space between title and invoice link */
+  align-items: center;
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333; /* Dark color for order titles */
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.invoice-link {
+  margin-left: 1rem; /* Space between order ID and the invoice link */
+}
+
+.orders__item a {
+  text-decoration: none;
+  color: #007bff; /* Blue link color */
+  font-weight: bold;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Prevent wrapping of the link */
+}
+
+.orders__item a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.orders__products {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.orders__products-item {
+  font-size: 1rem;
+  color: #555; /* Light gray for product items */
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd; /* Subtle border for separation */
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for the heading */
+  }
+
+  .orders__item h1 {
+    font-size: 1.2rem; /* Smaller font size for order item title */
+  }
+
+  .orders__item {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .invoice-link {
+    text-align: center;
+    text-decoration-line: underline;
+    margin-top: 1rem;
+    margin-left: 0.5rem; /* Less space on smaller screens */
+  }
+
+  .orders__products-item {
+    font-size: 0.9rem; /* Smaller font size for product items */
+    padding: 0.3rem 0; /* Less padding for product items */
+  }
+
+  /* Additional styling for better visual hierarchy */
+  .orders__products-item {
+    border-bottom: 1px solid #ddd; /* Maintain borders */
+    padding: 0.3rem 0; /* Reduce padding for items */
+  }
+
+  /* Add a general style for links within orders__products-item */
+  .orders__products-item a {
+    color: #007bff; /* Link color to match the invoice link */
+    text-decoration: underline; /* Underline links for visibility */
+  }
+
+  .orders__products-item a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+}

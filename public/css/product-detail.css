@@ -1,0 +1,107 @@
+main.centered {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 14px; /* Slightly increased border radius for a smoother appearance */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for elegance */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.centered:hover {
+  transform: translateY(-5px); /* Slight elevation on hover for depth */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Deepened shadow for hover effect */
+}
+
+h1 {
+  text-transform: capitalize;
+  font-size: 2.4rem; /* Slightly larger title for prominence */
+  color: #333333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.5px; /* Added letter-spacing for modern typography look */
+}
+
+h2 {
+  font-size: 1.9rem; /* Slightly increased price size for visibility */
+  color: #4caf50;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+hr {
+  border: 1px solid #eeeeee;
+  margin: 2rem 0; /* More space around the line for balance */
+}
+
+.image {
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 14px; /* Softer corners */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image container */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.image:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  transform: scale(1.02); /* Slight lift and scale for dynamic feel */
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Added smooth opacity transition */
+  object-fit: cover;
+}
+
+.image img:hover {
+  transform: scale(1.08); /* Increased scale for hover effect */
+  opacity: 0.95; /* Slight fade effect */
+}
+
+p {
+  font-size: 1.2rem; /* Increased paragraph size for readability */
+  color: #555555;
+  line-height: 1.8; /* Better line spacing for text flow */
+  margin: 1.5rem 0;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 0.8rem 1.6rem; /* Larger button for better accessibility */
+  border: none;
+  border-radius: 8px; /* Softer button corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Slight scale on hover */
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600; /* Slightly bolder button text */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px) scale(1.02); /* Slight lift and scale for interactive feel */
+}
+
+@media (max-width: 600px) {
+  main.centered {
+    padding: 1.2rem; /* Slightly reduced padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 1.9rem; /* Adjusted title size for mobile */
+  }
+
+  h2 {
+    font-size: 1.6rem; /* Adjusted price size for mobile */
+  }
+
+  p {
+    font-size: 1.05rem; /* Adjusted paragraph size for mobile */
+  }
+}

@@ -1,0 +1,142 @@
+/* Main Header Styling */
+.main-header {
+  width: 100%;
+  height: 4.5rem; /* Increased height for larger navbar */
+  background-color: #007bff; /* Darker blue for a modern look */
+  padding: 0 2rem; /* Increased padding for more spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+}
+
+/* Main Navigation */
+.main-header__nav {
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation Item List */
+.main-header__item-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Items */
+.main-header__item {
+  margin: 0 1.5rem; /* More spacing between items */
+}
+
+.main-header__item a,
+.main-header__item button {
+  font: inherit;
+  font-size: 1.2rem; /* Larger font size */
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  color: white; /* White Text */
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Added border transition */
+  padding: 0.5rem;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active,
+.main-header__item button:hover,
+.main-header__item button:active {
+  color: #ffeb3b; /* Yellow on hover */
+  border-bottom: 3px solid #ffeb3b; /* Thicker yellow underline */
+}
+
+#side-menu-toggle {
+  border: 2px solid white; /* Thicker white border */
+  font: inherit;
+  padding: 0.7rem;
+  background: transparent;
+  color: white; /* White Text */
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+#side-menu-toggle:focus {
+  outline: none;
+}
+
+#side-menu-toggle:hover,
+#side-menu-toggle:active {
+  color: #ffeb3b; /* Yellow on hover */
+  border-color: #ffeb3b; /* Yellow border on hover */
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  width: 35rem; /* Increased width */
+  height: 100vh;
+  max-width: 90%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white; /* White background for the mobile nav */
+  z-index: 10;
+  padding: 2.5rem 1.5rem 1.5rem 2.5rem; /* Increased padding */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-out;
+  box-shadow: 3px 0 6px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.mobile-nav__item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav__item {
+  margin: 1.5rem 0; /* Increased margin */
+}
+
+.mobile-nav__item a,
+.mobile-nav__item button {
+  font: inherit;
+  text-decoration: none;
+  color: #333; /* Dark Gray for Mobile Nav Items */
+  font-size: 1.2rem; /* Larger font size */
+  padding: 0.7rem 2.5rem; /* More padding */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav__item a:hover,
+.mobile-nav__item a:active,
+.mobile-nav__item a.active,
+.mobile-nav__item button:hover,
+.mobile-nav__item button:active {
+  background: #007bff; /* Darker blue on hover */
+  color: white; /* White Text on hover */
+  border-radius: 5px; /* Slightly larger rounded corners */
+}
+
+@media (min-width: 768px) {
+  .main-header__nav {
+    display: flex; /* Show nav on larger screens */
+  }
+
+  #side-menu-toggle {
+    display: none; /* Hide side menu toggle on larger screens */
+  }
+}

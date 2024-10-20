@@ -1,0 +1,94 @@
+/* General page styling */
+
+main {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #ffffff; /* White background for the form container */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  margin: 2rem auto;
+}
+
+/* Form styling */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333; /* Dark color for labels */
+}
+
+.form-control input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: border-color 0.3s ease;
+}
+
+.form-control input:focus {
+  border-color: #007bff; /* Blue border for focus */
+  outline: none;
+}
+
+.form-control input.invalid,
+.form-control textarea.invalid {
+  border-color: #ff4d4f; /* Red border for invalid fields */
+}
+
+/* Button styling */
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff; /* Blue button background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Error message styling */
+.user-message--error {
+  width: 100%;
+  color: #b71c1c; /* Error text color */
+  background-color: #ffcdd2; /* Light red background */
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  border: 1px solid #f44336; /* Red border */
+  text-align: center;
+}
+
+/* Centered reset link */
+.centered {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.centered a {
+  color: #007bff; /* Blue text for links */
+  text-decoration: none;
+}
+
+.centered a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  main {
+    padding: 1.5rem;
+    max-width: 95%; /* Responsive width on mobile */
+  }
+}

@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f4f8; /* Light Gray */
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+form {
+  display: inline;
+}
+
+.centered {
+  text-align: center;
+}
+
+.image {
+  height: 20rem;
+}
+
+.image img {
+  height: 100%;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  display: none;
+}
+
+.backdrop.active {
+  display: block;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem; /* Increased padding for a better look */
+  text-decoration: none;
+  font: inherit;
+  border: 2px solid #007bff; /* Blue Border */
+  color: #007bff; /* Blue Text */
+  background: white;
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #007bff; /* Bright Blue on hover */
+  color: white; /* White Text */
+}
+
+.btn.danger {
+  color: #dc3545; /* Bootstrap Red */
+  border-color: #dc3545; /* Bootstrap Red */
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: #dc3545; /* Darker Red */
+  color: white; /* White Text */
+}
+
+.user-message {
+  margin: auto;
+  width: 90%;
+  border: 2px solid #007bff; /* Blue Border */
+  padding: 1rem; /* Increased padding */
+  border-radius: 5px; /* Slightly rounded corners */
+  background: #e7f0ff; /* Light Blue Background */
+  text-align: center;
+}
+
+.user-message--error {
+  border-color: #dc3545; /* Red Border */
+  background-color: rgb(255, 120, 120); /* Light Red */
+  color: red; /* Red Text */
+}
+
+.pagination {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #007bff; /* Blue Text */
+  padding: 0.5rem 1rem; /* More padding for clickable area */
+  border: 2px solid #007bff; /* Blue Border */
+  margin: 0 1rem;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+  background: #007bff; /* Bright Blue Background */
+  color: white; /* White Text */
+}
+
+@media (min-width: 768px) {
+  .user-message {
+    width: 30rem;
+  }
+}
