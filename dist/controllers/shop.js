@@ -161,7 +161,8 @@ const postOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 exports.postOrder = postOrder;
 const getInvoices = (req, res, next) => {
     const orderId = req.params.orderId;
-    order_1.default.findById(orderId).then((order) => {
+    order_1.default.findById(orderId)
+        .then((order) => {
         if (!order) {
             return next(new Error("No order found"));
         }
@@ -170,6 +171,11 @@ const getInvoices = (req, res, next) => {
         }
         const invoiceName = "invoice-" + orderId + ".pdf";
         const invoicePath = path.join("data", "invoices", invoiceName);
+        // Ensure the directory exists
+        const dir = path.dirname(invoicePath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true }); // Create the directory if it doesn't exist
+        }
         const pdfDoc = new pdfkit_1.default();
         res.setHeader("Content-Type", "application/pdf");
         pdfDoc.pipe(fs.createWriteStream(invoicePath));
@@ -178,19 +184,17 @@ const getInvoices = (req, res, next) => {
         pdfDoc.text("-------------------------------------");
         let totalPrice = 0;
         order.products.forEach((prod) => {
-            totalPrice = totalPrice + prod.quantity * Number(prod.product.price);
+            totalPrice += prod.quantity * Number(prod.product.price);
             pdfDoc
                 .fontSize(14)
-                .text(prod.product.title +
-                " - " +
-                prod.quantity +
-                " x " +
-                " $ " +
-                prod.product.price);
+                .text(`${prod.product.title} - ${prod.quantity} x $${prod.product.price}`);
         });
         pdfDoc.text("--------------");
         pdfDoc.fontSize(20).text("Total Price: $" + totalPrice);
         pdfDoc.end();
+    })
+        .catch((err) => {
+        next(err); // Handle any errors that occur during the Order.findById call
     });
 };
 exports.getInvoices = getInvoices;

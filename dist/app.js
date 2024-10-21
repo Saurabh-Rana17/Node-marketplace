@@ -52,6 +52,7 @@ const csurf_1 = __importDefault(require("csurf"));
 const connect_flash_1 = __importDefault(require("connect-flash"));
 const multer_1 = __importDefault(require("multer"));
 const app = (0, express_1.default)();
+const PORT = Number(process.env.PORT) || 3000;
 const csrfProtection = (0, csurf_1.default)();
 const fileStorage = multer_1.default.diskStorage({
     destination: "images/",
@@ -72,7 +73,7 @@ const fileFilter = (req, file, cb) => {
 const mongoDBStore = (0, connect_mongodb_session_1.default)(express_session_1.default);
 const store = new mongoDBStore({
     collection: "sessions",
-    uri: process.env.MONGO_LOCAL,
+    uri: process.env.MONGO_URL,
 });
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -118,7 +119,7 @@ app.use((error, req, res, next) => {
 });
 const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect(process.env.MONGO_LOCAL);
+        yield mongoose_1.default.connect(process.env.MONGO_URL);
         console.log("connected to db");
         // const user = await User.findOne();
         // if (!user) {
@@ -129,8 +130,8 @@ const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
         //   });
         //   newUser.save();
         // }
-        app.listen(3000, () => {
-            console.log("listening on port 3000");
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`Server is listening on port ${PORT}`);
         });
     }
     catch (error) {

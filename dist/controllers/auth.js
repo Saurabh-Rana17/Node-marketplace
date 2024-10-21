@@ -186,12 +186,12 @@ const postSignup = (req, res, next) => __awaiter(void 0, void 0, void 0, functio
         },
         to: email,
         subject: "sending mail using node mailer",
-        text: "this is a text",
+        text: "this is a sample text",
         html: "<b>Your new  Account Created</b>",
     };
     res.redirect("/login");
     try {
-        const resp = yield transport.sendMail(mailOptions);
+        // const resp = await transport.sendMail(mailOptions);
     }
     catch (err) {
         const error = new Error(err);
