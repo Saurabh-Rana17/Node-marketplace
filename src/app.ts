@@ -56,7 +56,7 @@ const mongoDBStore = ConnectMongoDBSession(session);
 
 const store: MongoDBStore = new mongoDBStore({
   collection: "sessions",
-  uri: process.env.MONGO_LOCAL!,
+  uri: process.env.MONGO_URL!,
 });
 
 app.set("view engine", "ejs");
