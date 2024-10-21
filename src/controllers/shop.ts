@@ -143,10 +143,14 @@ export const getInvoices = (
   Order.findById(orderId)
     .then((order) => {
       if (!order) {
-        return next(new Error("No order found"));
+        // No order found, throw error before starting response
+        const error = new Error("No order found");
+        throw error;
       }
       if (order.user.userId.toString() !== req.user._id.toString()) {
-        return next(new Error("Unauthorized"));
+        // Unauthorized, throw error before starting response
+        const error = new Error("Unauthorized");
+        throw error;
       }
 
       const invoiceName = "invoice-" + orderId + ".pdf";
@@ -155,13 +159,16 @@ export const getInvoices = (
       // Ensure the directory exists
       const dir = path.dirname(invoicePath);
       if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true }); // Create the directory if it doesn't exist
+        fs.mkdirSync(dir, { recursive: true });
       }
 
       const pdfDoc = new PDFDocument();
+      // Set response headers after all checks are passed
       res.setHeader("Content-Type", "application/pdf");
+      res.setHeader("Content-Disposition", `inline; filename="${invoiceName}"`);
+
       pdfDoc.pipe(fs.createWriteStream(invoicePath));
-      pdfDoc.pipe(res);
+      pdfDoc.pipe(res); // Now start streaming the PDF content to the client
 
       pdfDoc.fontSize(26).text("Invoice", { underline: true });
       pdfDoc.text("-------------------------------------");
@@ -179,6 +186,6 @@ export const getInvoices = (
       pdfDoc.end();
     })
     .catch((err) => {
-      next(err); // Handle any errors that occur during the Order.findById call
+      next(err); // Pass any errors to the error handling middleware
     });
 };

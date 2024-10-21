@@ -22,13 +22,13 @@ router.post(
       .withMessage("Please fill all fields")
       .isString()
       .withMessage("Please enter valid string value")
-      .isLength({ min: 3 })
+      .isLength({ min: 1 })
       .trim(),
     body("price").notEmpty().withMessage("Please fill all fields").isFloat(),
     body("description")
       .notEmpty()
       .withMessage("Please fill all fields")
-      .isLength({ min: 8, max: 400 })
+      .isLength({ min: 8 })
       .trim(),
   ],
   postAddProduct
