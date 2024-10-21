@@ -22,6 +22,7 @@ import flash from "connect-flash";
 import multer, { Field, FileFilterCallback } from "multer";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 const csrfProtection = csrf();
 
@@ -132,7 +133,7 @@ const startServer = async () => {
 
     //   newUser.save();
     // }
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log("listening on port 3000");
     });
   } catch (error) {
