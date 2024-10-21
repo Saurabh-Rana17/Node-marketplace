@@ -161,7 +161,7 @@ export const getAdminProducts = async (req: Request, res: Response) => {
   const products = await Product.find({ userid: req.user._id });
   res.render("admin/products", {
     prods: products,
-    pageTitle: "Admin Products",
+    pageTitle: "Your Products",
     path: "/admin/products",
   });
 };
