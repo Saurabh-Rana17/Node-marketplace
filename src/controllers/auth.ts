@@ -6,14 +6,12 @@ import nodemailer from "nodemailer";
 import { MailOptions } from "nodemailer/lib/json-transport";
 import { validationResult } from "express-validator";
 
-const transport = nodemailer.createTransport({
-  service: "gmail",
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+var transport = nodemailer.createTransport({
+  host: "sandbox.smtp.mailtrap.io",
+  port: 2525,
   auth: {
-    user: process.env.SENDER_MAIL,
-    pass: process.env.APP_PASS,
+    user: "40bc7a52b7c125",
+    pass: "f0833e09f77434",
   },
 });
 
@@ -166,7 +164,8 @@ export const postSignup = async (
 
   res.redirect("/login");
   try {
-    // const resp = await transport.sendMail(mailOptions);
+    const resp = await transport.sendMail(mailOptions);
+    // console.log("resp is", resp);
   } catch (err: any) {
     const error: any = new Error(err);
     error.httpStatusCode = 500;
